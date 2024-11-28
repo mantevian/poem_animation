@@ -19,11 +19,14 @@ let actions = {
 	0: () => {
 		hgroup.style.opacity = 0;
 
+		body.style.background = `rgb(48, 38, 71)`;
+
 		ws["пятнами"].forEach(l => {
 			l.style.scale = 0;
 			l.style.fontSize = `8em`;
 			l.style.transition = `opacity 1s ease, scale 1s ease, rotate 1s ease`;
 			l.style.translate = `100px 200px`;
+			l.style.color = `white`;
 		});
 	},
 
@@ -106,12 +109,14 @@ let actions = {
 			l.style.scale = 1;
 			l.style.opacity = 1;
 			l.style.translate = `350px 600px`;
+			l.style.color = `white`;
 		});
 	},
 
 	129: () => {
 		ws["взлётке"].forEach(l => {
 			l.style.translate = `500px 800px`;
+			l.style.color = `white`;
 		});
 	},
 
@@ -158,6 +163,7 @@ let actions = {
 			l.style.fontSize = `7em`;
 			l.style.opacity = 1;
 			l.style.translate = `1000px 700px`;
+			l.style.color = `white`;
 		});
 	},
 
@@ -178,6 +184,7 @@ let actions = {
 			l.style.opacity = 1;
 			l.style.fontWeight = 900;
 			l.style.translate = `125px 800px`;
+			l.style.color = `white`;
 		});
 	},
 
@@ -344,7 +351,7 @@ let actions = {
 			l.style.transition = `opacity 0.5s ease, scale 1s ease`;
 			l.style.opacity = 1;
 			l.style.fontSize = `9em`;
-			l.style.translate = `400px 2680px`;
+			l.style.translate = `400px 2580px`;
 			l.style.color = `var(--slyakot)`;
 			setTimeout(() => {
 				l.style.animation = `slyakot 2s cubic-bezier(0.68, -0.6, 0.32, 1.6)`;
@@ -358,7 +365,7 @@ let actions = {
 		l.style.transition = `opacity 0.5s ease`;
 		l.style.opacity = 1;
 		l.style.fontSize = `7em`;
-		l.style.translate = `1100px 2700px`;
+		l.style.translate = `1050px 2600px`;
 		l.style.color = `white`;
 	},
 
@@ -599,11 +606,10 @@ let actions = {
 	1850: () => {
 		let w = rs["прощай"];
 		w.style.fontSize = `24em`;
-		w.style.color = `black`;
+		w.style.color = `rgb(150, 150, 150)`;
 		w.style.fontWeight = 500;
 		w.style.translate = `120px 400px`;
 		w.style.display = `flex`;
-		w.style.filter = `drop-shadow(16px 16px 20px red) invert(50%)`;
 
 		for (let l of ws["прощай"]) {
 			l.style.transition = `opacity 2s ease`;
@@ -614,23 +620,23 @@ let actions = {
 	2000: () => {
 		for (let l of [...ws["не1"], ...ws["вздумай"], ...ws["сказать"], ...ws["прощай"]]) {
 			setTimeout(() => {
-				l.style.transition = `scale 3s ease, translate 5s cubic-bezier(0.55, 0, 1, 0.45), filter 3s ease`;
+				l.style.transition = `scale 5s ease, translate 5s cubic-bezier(0.55, 0, 1, 0.45), filter 2s ease, opacity 1s ease`;
 				l.style.scale = `0.5 3`;
-				l.style.filter = `blur(2em)`;
+				l.style.filter = `blur(1em)`;
 				l.style.translate = `0 -${Math.floor(Math.random() * 2000) + 4000}px`;
+				l.style.opacity = 0;
 			}, Math.floor(Math.random() * 400));
+		}
+	},
+
+	2120: () => {
+		for (let l of [...ws["не1"], ...ws["вздумай"], ...ws["сказать"], ...ws["прощай"]]) {
+			l.style.display = `none`;
 		}
 	},
 
 	2010: () => {
 		body.style.backgroundColor = `var(--night)`;
-	},
-
-	2011: () => {
-		for (let l of [...ws["не1"], ...ws["вздумай"], ...ws["сказать"], ...ws["прощай"]]) {
-			l.style.transition = `scale 3s ease, translate 5s cubic-bezier(0.55, 0, 1, 0.45), filter 3s ease, opacity 5s ease`;
-			l.style.opacity = 0;
-		}
 	},
 
 	2150: () => {
@@ -640,32 +646,35 @@ let actions = {
 			l.style.color = `var(--snow)`;
 			l.style.translate = `100px -300px`;
 			l.style.opacity = 1;
-			l.style.rotate = `${Math.floor(Math.random() * 60 - 30)}deg`;
 		});
+	
+		rs["мокрыми"].style.rotate = `5deg`;
 
 		ws["хлопьями"].forEach(l => {
 			l.style.transition = `opacity 1s ease`;
-			l.style.fontSize = `${Math.floor(Math.random() * 3 + 12)}em`;
+			l.style.fontSize = `12em`;
 			l.style.color = `var(--snow)`;
 			l.style.translate = `600px -600px`;
 			l.style.opacity = 1;
-			l.style.rotate = `${Math.floor(Math.random() * 60 - 30)}deg`;
 		});
+
+		rs["хлопьями"].style.rotate = `-10deg`;
 
 		ws["падает"].forEach(l => {
 			l.style.transition = `opacity 1s ease`;
-			l.style.fontSize = `${Math.floor(Math.random() * 3 + 12)}em`;
+			l.style.fontSize = `12em`;
 			l.style.color = `var(--snow)`;
-			l.style.translate = `300px -900px`;
+			l.style.translate = `300px -1000px`;
 			l.style.opacity = 1;
-			l.style.rotate = `${Math.floor(Math.random() * 60 - 30)}deg`;
 		});
+
+		rs["падает"].style.rotate = `8deg`;
 
 		ws["снег"].forEach(l => {
 			l.style.transition = `opacity 1s ease`;
-			l.style.fontSize = `${Math.floor(Math.random() * 3 + 12)}em`;
+			l.style.fontSize = `12em`;
 			l.style.color = `var(--snow)`;
-			l.style.translate = `450px -1050px`;
+			l.style.translate = `800px -1050px`;
 			l.style.opacity = 1;
 		});
 	},
@@ -674,12 +683,11 @@ let actions = {
 		[rs["мокрыми"], rs["хлопьями"], rs["падает"]].forEach(w => {
 			w.style.transition = `opacity 1s ease, translate 10s linear, rotate 10s linear`;
 			w.style.translate = `0 4000px`;
-			w.style.rotate = `${Math.floor(Math.random() * 60 - 30)}deg`;
 		});
 
 		[rs["снег"]].forEach(w => {
 			w.style.transition = `opacity 1s ease, translate 8s linear, rotate 8s linear`;
-			w.style.translate = `0 2800px`;
+			w.style.translate = `0 2900px`;
 		});
 	},
 
@@ -699,12 +707,9 @@ let actions = {
 			l.style.transition = `opacity 1s ease`;
 			l.style.fontSize = `12em`;
 			l.style.color = `var(--slyakot)`;
-			l.style.translate = `350px 1900px`;
+			l.style.translate = `350px 1960px`;
 			l.style.opacity = 1;
 		});
-
-		ws["на3"][0].style.rotate = `-30deg`;
-		ws["на3"][1].style.rotate = `-30deg`;
 
 		ws["плащ"].forEach(l => {
 			l.style.transition = `opacity 1s ease`;
@@ -715,9 +720,9 @@ let actions = {
 
 		ws["плащ"][0].style.fontSize = `32em`;
 		ws["плащ"][0].style.translate = `650px 1820px`;
-		ws["плащ"][1].style.translate = `630px 1680px`;
-		ws["плащ"][2].style.translate = `630px 1700px`;
-		ws["плащ"][3].style.translate = `630px 1720px`;
+		ws["плащ"][1].style.translate = `630px 1650px`;
+		ws["плащ"][2].style.translate = `630px 1650px`;
+		ws["плащ"][3].style.translate = `630px 1650px`;
 	},
 
 	2900: () => {
@@ -768,7 +773,7 @@ let actions = {
 		ws["нас"].forEach(l => {
 			l.style.transition = `opacity 1s ease`;
 			l.style.fontSize = `12em`;
-			l.style.color = `var(--love)`;
+			l.style.color = `var(--sun)`;
 			l.style.opacity = 1;
 			l.style.translate = `600px 1050px`;
 		});
@@ -795,7 +800,7 @@ let actions = {
 	3350: () => {
 		ws["осень"].forEach(l => {
 			setTimeout(() => {
-				l.style.transition = `opacity 3s ease, translate 3s ease, scale 3s ease, rotate 3s ease, filter 3s ease`;
+				l.style.transition = `opacity 2s ease, translate 3s ease, scale 3s ease, rotate 3s ease, filter 2s ease`;
 				l.style.opacity = 0;
 				l.style.translate = `${200 + Math.floor(Math.random() * 1000) - 500}px 0`;
 				l.style.rotate = `${Math.floor(Math.random() * 90) - 45}deg`;
@@ -806,7 +811,7 @@ let actions = {
 
 		[...ws["не2"], ...ws["значит"], ...ws["что"], ...ws["нас"], ...ws["больше"], ...ws["нет"]].forEach(l => {
 			setTimeout(() => {
-				l.style.transition = `opacity 3s ease, translate 3s ease, scale 3s ease, rotate 3s ease, filter 3s ease`;
+				l.style.transition = `opacity 2s ease, translate 3s ease, scale 3s ease, rotate 3s ease, filter 2s ease`;
 				l.style.opacity = 0;
 				l.style.translate = `${200 + Math.floor(Math.random() * 1000) - 500}px 1500px`;
 				l.style.rotate = `${Math.floor(Math.random() * 90) - 45}deg`;
@@ -827,7 +832,7 @@ let actions = {
 			l.style.transition = `opacity 1s ease`;
 			l.style.fontSize = `32em`;
 			l.style.opacity = 1;
-			l.style.translate = `500px 600px`;
+			l.style.translate = `450px 600px`;
 			l.style.color = `var(--rain)`;
 			l.style.filter = `blur(3em)`;
 		});
@@ -836,7 +841,7 @@ let actions = {
 			l.style.transition = `opacity 1s ease`;
 			l.style.fontSize = `24em`;
 			l.style.opacity = 1;
-			l.style.translate = `300px 1000px`;
+			l.style.translate = `250px 1000px`;
 			l.style.color = `var(--rain)`;
 			l.style.filter = `blur(3em)`;
 		});
@@ -851,10 +856,17 @@ let actions = {
 
 	3660: () => {
 		[...ws["не3"], ...ws["плачь"]].forEach(l => {
-			l.style.transition = `opacity 1s ease, filter 4s ease, scale 2s ease`;
+			l.style.transition = `opacity 2s ease, filter 4s ease, scale 2s ease`;
 			l.style.filter = `blur(0.5em)`;
 			l.style.scale = `0.5 3`;
+			l.style.opacity = 0;
 		});
+	},
+
+	3700: () => {
+		rs["снег"].style.display = `none`;
+		rs["на3"].style.display = `none`;
+		rs["плащ"].style.display = `none`;
 	},
 
 	3800: () => {
@@ -899,7 +911,7 @@ let actions = {
 			l.style.fontSize = `12em`;
 			l.style.opacity = 1;
 			l.style.color = `var(--angry)`;
-			l.style.translate = `1000px 1200px`;
+			l.style.translate = `1050px 1200px`;
 		});
 	},
 
@@ -920,27 +932,29 @@ let actions = {
 	4060: () => {
 		ws["дожди"].forEach(l => {
 			l.style.transition = `opacity 2s ease`;
-			l.style.fontSize = `24em`;
+			l.style.fontSize = `20em`;
 			l.style.opacity = 1;
-			l.style.translate = `250px 800px`;
+			l.style.translate = `150px 810px`;
 			l.style.color = `var(--rain)`;
 			l.style.filter = `blur(1em)`;
 		});
 	},
 
-	4100: () => {
+	4070: () => {
 		ws["дожди"].forEach(l => {
 			l.style.transition = `opacity 2s ease, filter 1s ease`;
 			l.style.filter = `blur(0)`;
 		});
 	},
 
-	4250: () => {
+	4160: () => {
 		ws["дожди"].forEach(l => {
 			l.style.transition = `opacity 2s ease, filter 1s ease, scale 2s ease`;
-			l.style.scale = `0.5 2`;
-			l.style.filter = `blur(2em)`;
+			l.style.filter = `blur(8px)`;
 		});
+
+		rs["дожди"].style.transition = `translate 10s ease`;
+		rs["дожди"].style.translate = `0 1000px`;
 	},
 
 	4300: () => {
@@ -955,7 +969,7 @@ let actions = {
 	4330: () => {
 		ws["обязательно"].forEach(l => {
 			l.style.transition = `opacity 1s ease`;
-			l.style.translate = `700px 800px`;
+			l.style.translate = `700px 720px`;
 			l.style.fontSize = `8em`;
 			l.style.opacity = 1;
 		});
@@ -964,7 +978,7 @@ let actions = {
 	4360: () => {
 		ws["буду"].forEach(l => {
 			l.style.transition = `opacity 1s ease`;
-			l.style.translate = `700px 950px`;
+			l.style.translate = `700px 896px`;
 			l.style.fontSize = `8em`;
 			l.style.opacity = 1;
 		});
@@ -973,7 +987,7 @@ let actions = {
 	4390: () => {
 		ws["с"].forEach(l => {
 			l.style.transition = `opacity 1s ease`;
-			l.style.translate = `700px 1100px`;
+			l.style.translate = `700px 1073px`;
 			l.style.fontSize = `8em`;
 			l.style.opacity = 1;
 		});
@@ -988,6 +1002,10 @@ let actions = {
 		});
 	},
 
+	4490: () => {
+		p.style.translate = `0 -1600px`;
+	},
+
 	4601: () => {
 		[...ws["я"], ...ws["обязательно"], ...ws["буду"], ...ws["с"], ...ws["тобой"]].forEach(l => {
 			l.style.opacity = 0;
@@ -996,28 +1014,40 @@ let actions = {
 
 	4500: () => {
 		ws["дожди"].forEach(l => {
-			l.style.opacity = 0;
+			l.style.transition = `opacity 2s ease, filter 1s ease, scale 2s ease`;
+			l.style.filter = `blur(1em)`;
 		});
 
-		ws["дождись"].forEach(l => {
-			l.style.transition = `opacity 2s ease`;
-			l.style.fontSize = `24em`;
+		ws["сь"].forEach(l => {
+			l.style.transition = `opacity 1s ease`;
+			l.style.fontSize = `20em`;
 			l.style.opacity = 1;
-			l.style.translate = `70px 800px`;
+			l.style.translate = `1150px 1800px`;
 			l.style.color = `var(--rain)`;
 			l.style.filter = `blur(1em)`;
 		});
 	},
 
-	4600: () => {
-		ws["дождись"].forEach(l => {
+	4540: () => {
+		ws["дожди"].forEach(l => {
+			l.style.transition = `opacity 2s ease, filter 1s ease, scale 2s ease`;
+			l.style.filter = `blur(0)`;
+		});
+
+		ws["сь"].forEach(l => {
 			l.style.transition = `opacity 2s ease, filter 1s ease`;
 			l.style.filter = `blur(0)`;
 		});
 	},
 
 	4800: () => {
-		ws["дождись"].forEach(l => {
+		ws["дожди"].forEach(l => {
+			l.style.transition = `opacity 20s ease, filter 20s ease`;
+			l.style.filter = `blur(2em)`;
+			l.style.opacity = 0;
+		});
+
+		ws["сь"].forEach(l => {
 			l.style.transition = `opacity 20s ease, filter 20s ease`;
 			l.style.filter = `blur(2em)`;
 			l.style.opacity = 0;
