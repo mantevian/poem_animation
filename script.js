@@ -1022,7 +1022,7 @@ let actions = {
 			l.style.transition = `opacity 1s ease`;
 			l.style.fontSize = `20em`;
 			l.style.opacity = 1;
-			l.style.translate = `1150px 1800px`;
+			l.style.translate = `1150px 1810px`;
 			l.style.color = `var(--rain)`;
 			l.style.filter = `blur(1em)`;
 		});
